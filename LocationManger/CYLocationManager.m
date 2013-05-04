@@ -35,7 +35,7 @@ static const NSUInteger kUpdateLocationMaxInterval = 10;
 
 @property (nonatomic, getter = isCheckingSignalStregth) BOOL checkingSignalStrength;
 @property (nonatomic, getter = isAllowUseMaxAcceptableAccuracy) BOOL allowUseMaxAcceptableAccuracy;
-@property (nonatomic, getter = isNeedForceCalculation) BOOL needForeceCalculation;
+@property (nonatomic, getter = isNeedForceCalculation) BOOL needForceCalculation;
 
 @end
 
@@ -134,13 +134,15 @@ static const NSUInteger kUpdateLocationMaxInterval = 10;
     if ([CLLocationManager locationServicesEnabled]) {
         [self.currentKeepLocations removeAllObjects];
         self.signalStrength = CYGPSSignalStrengthInvalid;
-        [self.locationManager startUpdatingLocation];
-        [self.locationManager startUpdatingHeading];
-        
+        self.needForceCalculation = YES;
         self.allowUseMaxAcceptableAccuracy = NO;
         self.lastCalculationTimestamp = 0;
 
         [self checkSignalStrength];
+        
+        [self.locationManager startUpdatingLocation];
+        [self.locationManager startUpdatingHeading];
+
         
         return YES;
     } else {
@@ -197,7 +199,7 @@ static const NSUInteger kUpdateLocationMaxInterval = 10;
         BOOL canUpdateDistanceAndSpeed = ([self.currentKeepLocations count] >= kMinNumberOfLocationsRequiredToCalculate);
         
         if (self.isNeedForceCalculation || [NSDate timeIntervalSinceReferenceDate] - self.lastCalculationTimestamp > kCalculationInterval) {
-            self.needForeceCalculation = NO;
+            self.needForceCalculation = NO;
             self.lastCalculationTimestamp = [NSDate timeIntervalSinceReferenceDate];
             
             CLLocation *lastLocation = (self.lastRecordedLocation != nil) ? self.lastRecordedLocation : oldLocation;
@@ -235,7 +237,7 @@ static const NSUInteger kUpdateLocationMaxInterval = 10;
 
 
 - (void)locationManager:(CYLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading {
-    self.needForeceCalculation = YES;
+    self.needForceCalculation = YES;
 }
 
 
