@@ -83,10 +83,7 @@ static const NSUInteger kUpdateLocationMaxInterval = 10;
     self.currentKeepLocations = nil;
 }
 - (void)setSignalStrength:(CYGPSSignalStrength)signalStrength {
-    BOOL needToUpdateDelegate = NO;
-    if (_signalStrength != signalStrength) {
-        needToUpdateDelegate = YES;
-    }
+    BOOL needToUpdateDelegate = _signalStrength != signalStrength;
     
     _signalStrength = signalStrength;
     
