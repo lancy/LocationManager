@@ -19,6 +19,9 @@
 		BF9A28E21734311D005233E4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9A28E01734311D005233E4 /* MainStoryboard.storyboard */; };
 		BF9A28E51734311D005233E4 /* GLMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9A28E41734311D005233E4 /* GLMainViewController.m */; };
 		BF9A28E81734311D005233E4 /* GLFlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9A28E71734311D005233E4 /* GLFlipsideViewController.m */; };
+		BF9A28F017343146005233E4 /* CYLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9A28EF17343146005233E4 /* CYLocationManager.m */; };
+		BF9A28F217343172005233E4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9A28F117343172005233E4 /* CoreLocation.framework */; };
+		BF9A28F4173444FB005233E4 /* fells_loop.gpx in Resources */ = {isa = PBXBuildFile; fileRef = BF9A28F3173444FB005233E4 /* fells_loop.gpx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,10 @@
 		BF9A28E41734311D005233E4 /* GLMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLMainViewController.m; sourceTree = "<group>"; };
 		BF9A28E61734311D005233E4 /* GLFlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLFlipsideViewController.h; sourceTree = "<group>"; };
 		BF9A28E71734311D005233E4 /* GLFlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLFlipsideViewController.m; sourceTree = "<group>"; };
+		BF9A28EE17343146005233E4 /* CYLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLocationManager.h; sourceTree = "<group>"; };
+		BF9A28EF17343146005233E4 /* CYLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYLocationManager.m; sourceTree = "<group>"; };
+		BF9A28F117343172005233E4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		BF9A28F3173444FB005233E4 /* fells_loop.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = fells_loop.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF9A28F217343172005233E4 /* CoreLocation.framework in Frameworks */,
 				BF9A28C91734311D005233E4 /* UIKit.framework in Frameworks */,
 				BF9A28CB1734311D005233E4 /* Foundation.framework in Frameworks */,
 				BF9A28CD1734311D005233E4 /* CoreGraphics.framework in Frameworks */,
@@ -59,6 +67,8 @@
 		BF9A28BC1734311D005233E4 = {
 			isa = PBXGroup;
 			children = (
+				BF9A28F3173444FB005233E4 /* fells_loop.gpx */,
+				BF9A28F117343172005233E4 /* CoreLocation.framework */,
 				BF9A28CE1734311D005233E4 /* LocationManger */,
 				BF9A28C71734311D005233E4 /* Frameworks */,
 				BF9A28C61734311D005233E4 /* Products */,
@@ -88,6 +98,8 @@
 			children = (
 				BF9A28D71734311D005233E4 /* GLAppDelegate.h */,
 				BF9A28D81734311D005233E4 /* GLAppDelegate.m */,
+				BF9A28EE17343146005233E4 /* CYLocationManager.h */,
+				BF9A28EF17343146005233E4 /* CYLocationManager.m */,
 				BF9A28E01734311D005233E4 /* MainStoryboard.storyboard */,
 				BF9A28E31734311D005233E4 /* GLMainViewController.h */,
 				BF9A28E41734311D005233E4 /* GLMainViewController.m */,
@@ -169,6 +181,7 @@
 				BF9A28DD1734311D005233E4 /* Default@2x.png in Resources */,
 				BF9A28DF1734311D005233E4 /* Default-568h@2x.png in Resources */,
 				BF9A28E21734311D005233E4 /* MainStoryboard.storyboard in Resources */,
+				BF9A28F4173444FB005233E4 /* fells_loop.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +196,7 @@
 				BF9A28D91734311D005233E4 /* GLAppDelegate.m in Sources */,
 				BF9A28E51734311D005233E4 /* GLMainViewController.m in Sources */,
 				BF9A28E81734311D005233E4 /* GLFlipsideViewController.m in Sources */,
+				BF9A28F017343146005233E4 /* CYLocationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +319,7 @@
 				BF9A28ED1734311D005233E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
