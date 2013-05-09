@@ -13,7 +13,7 @@ static const NSUInteger kNumberOfLocationsToKeep = 5;
 static const NSUInteger kMinNumberOfLocationsRequiredToCalculate = 3;
 static const NSUInteger kGPSSignalRecheckInterval = 15;
 static const CGFloat kRequiredHorizontalAccuracy = 20.0;
-static const CGFloat kMaxAcceptableHorizontalAccuracy = 40.0;
+static const CGFloat kMaxAcceptableHorizontalAccuracy = 70.0;
 static const NSTimeInterval kCalculationInterval = 3;
 static const NSTimeInterval kValidIntervalWithKeepedLocation = 3;
 static const NSUInteger kUpdateLocationMaxInterval = 10;
@@ -242,12 +242,10 @@ static const NSUInteger kUpdateLocationMaxInterval = 10;
 
 
 - (void)locationManager:(CYLocationManager *)manager didFailWithError:(NSError *)error {
-    if (error.code == kCLErrorDenied) {
-        if ([self.delegate respondsToSelector:@selector(locationManager:didFailWithError:)]) {
-            [self.delegate locationManager:self didFailWithError:error];
-        }
-        [self stopLocationUpdates];
+    if ([self.delegate respondsToSelector:@selector(locationManager:didFailWithError:)]) {
+        [self.delegate locationManager:self didFailWithError:error];
     }
+    [self stopLocationUpdates];
 }
 
 
