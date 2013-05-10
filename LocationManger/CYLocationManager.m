@@ -15,7 +15,7 @@ static const NSUInteger kGPSSignalRecheckInterval = 15;
 static const CGFloat kRequiredHorizontalAccuracy = 20.0;
 static const CGFloat kMaxAcceptableHorizontalAccuracy = 70.0;
 static const NSTimeInterval kCalculationInterval = 3;
-static const NSTimeInterval kValidIntervalWithKeepedLocation = 3;
+static const NSTimeInterval kValidIntervalWithKeptLocation = 3;
 static const NSUInteger kUpdateLocationMaxInterval = 10;
 
 
@@ -207,7 +207,7 @@ static const NSUInteger kUpdateLocationMaxInterval = 10;
             CLLocation *bestLocation = nil;
             CGFloat bestAccuracy = kRequiredHorizontalAccuracy;
             for (CLLocation *location in self.currentKeepLocations) {
-                if ([NSDate timeIntervalSinceReferenceDate] - [location.timestamp timeIntervalSinceReferenceDate] <= kValidIntervalWithKeepedLocation) {
+                if ([NSDate timeIntervalSinceReferenceDate] - [location.timestamp timeIntervalSinceReferenceDate] <= kValidIntervalWithKeptLocation) {
                     if (location.horizontalAccuracy < bestAccuracy && location != lastLocation) {
                         bestAccuracy = location.horizontalAccuracy;
                         bestLocation = location;
