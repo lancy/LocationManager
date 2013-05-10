@@ -101,11 +101,19 @@
                                     <action selector="tapResetButton:" destination="2" eventType="touchUpInside" id="o0e-sM-b4t"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Error:" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gz4-n0-Di6">
+                                <rect key="frame" x="20" y="298" width="280" height="84"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="distanceLabel" destination="t6z-c5-bDy" id="Ptf-l4-kDW"/>
+                        <outlet property="errorLabel" destination="Gz4-n0-Di6" id="XUD-w9-Iqt"/>
                         <outlet property="signalLabel" destination="aNX-pU-hL0" id="Izg-B6-5Uh"/>
                         <outlet property="stateLabel" destination="Hsw-Y9-RKe" id="G6L-07-29n"/>
                     </connections>
@@ -153,11 +161,8 @@
         <class className="GLMainViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMainViewController.h"/>
             <relationships>
-                <relationship kind="action" name="tapPrepareButton:"/>
-                <relationship kind="action" name="tapResetButton:"/>
-                <relationship kind="action" name="tapStartButton:"/>
-                <relationship kind="action" name="tapStopButton:"/>
                 <relationship kind="outlet" name="distanceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="errorLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="signalLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="stateLabel" candidateClass="UILabel"/>
             </relationships>

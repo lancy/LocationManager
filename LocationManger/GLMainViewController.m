@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *signalLabel;
 @property (weak, nonatomic) IBOutlet UILabel *stateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *errorLabel;
 
 @end
 
@@ -75,7 +76,7 @@
 
 - (void)locationManager:(CYLocationManager *)locationManager didFailWithError:(NSError *)error
 {
-    [self.distanceLabel setText:[NSString stringWithFormat:@"%@", error]];
+    [self.errorLabel setText:[NSString stringWithFormat:@"%@", error]];
 }
 
 
@@ -93,4 +94,8 @@
     }
 }
 
+- (void)viewDidUnload {
+    [self setErrorLabel:nil];
+    [super viewDidUnload];
+}
 @end
