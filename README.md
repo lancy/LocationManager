@@ -86,7 +86,6 @@ Simply add *CYLocationManager.h* and *CYLocationManager.m* to your project, and 
 * kUpdateLocationMaxInterval: if user stop walking or running, CoreLocation won't update the location, we need to force it to request a new location. It's mean we alway get a new location during kUpdateLocationMaxInterval seconds.
 
 
-## Contact me
 ## Contact Me
 * [Follow my github](https://github.com/lancy)
 * [Write an issue](https://github.com/lancy/LocationManger/issues)
