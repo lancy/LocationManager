@@ -82,10 +82,12 @@ Simply add *CYLocationManager.h* and *CYLocationManager.m* to your project, and 
 * kGPSSignalRecheckInterval, interval of rechecking GPS Signal.
 * kRequiredHorizontalAccuracy, kRequiredHorizontalAccuracy: discussed in GPS signal strength. 
 * kCalculationInterval: We calculate the distance kCalculationInterval seconds once.
-* kValidIntervalWithKeptLocation: The valid interval between current location and keeper locations. 
+* kValidIntervalWithKeptLocation: The valid interval between current location and kept locations. 
 * kUpdateLocationMaxInterval: if user stop walking or running, CoreLocation won't update the location, we need to force it to request a new location. It's mean we alway get a new location during kUpdateLocationMaxInterval seconds.
 
 
 ## Contact me
-* Lancy
+## Contact Me
+* [Follow my github](https://github.com/lancy)
+* [Write an issue](https://github.com/lancy/LocationManger/issues)
 * Send Email to me: lancy1014@gmail.com
